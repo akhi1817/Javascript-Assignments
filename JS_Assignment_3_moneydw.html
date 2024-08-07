@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- css link -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     <!-- js  -->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</head>
+<body class="m-5 bg-warning">
+    <marquee><h1 class="text-primary text-center">JS Demo 3</h1></marquee>
+    <div class="container bg-warning mt-5">
+        <div class="row">
+            <div class="col-xl-8">
+                <labels class="w-100 font-weight-bold mr-2">Credit =></labels>
+                <input type="number" id="amt1"/>
+                <labels class="w-100 font-weight-bold ml-3">Debit =></labels>
+                <input type="number" id="amt2"/>
+            </div>
+            <div class="col-xl-4 d-flex">
+                <div class="text-black font-weight-bold">Wallet  =>  </div>
+                <div class="w-75 bg-white border border-dark" id="balance"></div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col mt-5 ml-5 d-flex" style="display: flex;">
+                <button onclick="addWallet()" class="btn btn-success pl-5 pr-5 mr-5 mt-5 text-center">Add balance</button>
+                <buttton onclick="subWallet()" class="btn btn-danger pl-5 pr-5 ml-5 mt-5 text-center">Debit</buttton>
+            </div>
+
+        </div>     
+    </div>
+
+    <table class="table table-bordered mt-5">
+        <thead class="text-white bg-dark">
+            <tr>
+                <th>SR.no</th>
+                <th>Credit</th>
+                <th>Debit</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white">
+            <tr class=" text-white font-weight-bold bg-info">
+                <td>1</td>
+                <td id="tdcredit"></td>
+                <td id="tddebit"></td>
+                <td id="tdbalance"></td>
+            </tr>
+        </tbody>
+       
+    </table>
+   
+
+    <!-- js code -->
+     <script>
+
+        function addWallet(){
+            let amt= +document.getElementById(`amt1`).value;
+            document.getElementById(`tdcredit`).innerHTML=amt;
+            document.getElementById(`balance`).innerHTML=amt;
+        }
+
+        function subWallet(){
+            let a= +document.getElementById(`amt1`).value;
+            let b= +document.getElementById(`amt2`).value;
+            document.getElementById(`tddebit`).innerHTML=b;
+            let sum= a-b;
+            document.getElementById(`tdbalance`).innerHTML=sum;
+            document.getElementById(`balance`).innerHTML=sum;
+        }
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .box{
+            border: 1px solid black;
+            width: 500px;
+            height: 100px;
+            display: flex;
+            margin-top: 100px;
+            margin-left: 280px;
+            background-color: crimson;
+            align-items:center ;
+        }
+        .box2{
+            border: 1px solid black;
+            width: 500px;
+            height: 100px;
+            display: flex;
+            margin-top: 0px;
+            margin-left: 280px;
+            background-color: chocolate;
+            align-items:center ;
+        }
+        .answer{
+            border: 1px solid; 
+            background-color: aliceblue;
+            width: 180px;
+            height: 20px;
+            
+        }
+        .output{
+            display:flex;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+        <div class="box">
+         <!-- email -->
+         <label><strong>Email:</strong></label>
+         <span><input type="email" id="email" onkeyup="GetData()"></span>
+         <!-- password -->
+         <label><strong>Password:</strong></label>
+         <span><input type="password" id="pass" onkeyup="GetData()"></span>
+        </div> 
+        <div class="box2">
+         <div class="output"><strong>Email:</strong><div class="answer" id="useremail"></div></div>
+         <div class="output"><strong>Password:</strong><div class="answer" id="password"></div></div>
+         <button class="btn" onclick="showPass()">show password</button>
+        </div>
+   
+
+      
+
+
+
+ <script>
+    const GetData =() =>{
+        let uname= document.getElementById(`email`).value;
+        console.log(uname);
+        document.getElementById(`useremail`).innerHTML= uname;
+
+        let pass=document.getElementById(`pass`).value;
+        console.log(pass);
+        document.getElementById(`password`).innerHTML=pass;
+
+        function showPass(){
+        
+        }
+       
+    }
+ </script>
+</body>
+</html>
