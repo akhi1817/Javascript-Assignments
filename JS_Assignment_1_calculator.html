@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+          
+    
+        }
+        .buttons{
+            text-align: center;
+        }
+        .btn{
+            border-radius: 10%;
+            width: 100px;
+            height: 40px;
+            background-color: cadetblue;
+            position: relative;
+            margin-top: 70px;
+            margin-left: 70px;
+        }
+        .inputs{
+            color: black;
+            display: flex;
+            margin-top: 80px;
+            margin-left: 30px;
+        }
+        .labels{
+             margin-left: 180px;
+             color: black;
+        }
+        .label1{
+            text-align: center;
+            margin-top: 50px;
+            margin-left: 440px;
+            display: flex;
+        }
+        .ans{
+            border: 1px solid black;
+            width: 250px;
+            height: 30px;
+            text-align: center;
+            
+        }
+    </style>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- js  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</head>
+<body class="bg-warning">
+        <marquee dir="auto" class="bg-secondary"> <h1 class="text-center text-primary">Basic Calculator</h1>  </marquee>   
+    <div class="buttons">
+        <button  onclick="add()" class="btn btn-success">Addition</button>
+        <button  onclick="sub()"class="btn btn-success">Subtraction</button>
+        <button  onclick="mult()"class="btn btn-success">Multiply</button>
+        <button  onclick="div()"class="btn btn-success">Division</button>
+        <button  onclick="mod()"class="btn btn-success">Mod</button>
+    </div>
+
+    <div class="inputs">
+        <label class="labels">Enter 1st Num :</label>
+        <input type="number" id="num1"/><br>
+        <label class="labels">Enter 2nd Num :</label>
+        <input type="number" id="num2"/><br>
+    </div>
+       
+    <div class="label1">Operation:<div class="ans bg-white" id="operation"></div></div>
+
+
+    <div class="label1">Answer: <div class="ans bg-white" id="answer"></div></div>
+
+
+
+    <script>
+
+        // Addition function
+       function add(){
+       let no1= +document.getElementById(`num1`).value;
+       let no2= +document.getElementById(`num2`).value;
+       
+       let sum= no1+no2;
+       document.getElementById(`operation`).innerHTML="Addition"
+        document.getElementById(`answer`).innerHTML=`${sum}`;
+       
+
+       }
+
+    //    subtraction function
+       function sub(){
+       let no1= +document.getElementById(`num1`).value;
+       let no2= +document.getElementById(`num2`).value;
+       
+       let sum= no1-no2;
+       document.getElementById(`operation`).innerHTML="Subtraction";
+
+       document.getElementById(`answer`).innerHTML=` ${sum}`;
+       }
+
+
+    //    Multiplication function
+         function mult(){
+           let no1= +document.getElementById(`num1`).value;
+           let no2= +document.getElementById(`num2`).value;
+        
+           let sum= no1*no2;
+           document.getElementById(`operation`).innerHTML="Multiplication";
+
+                document.getElementById(`answer`).innerHTML=` ${sum}`;
+           }
+
+    //    Division function
+        function div(){
+           let no1= +document.getElementById(`num1`).value;
+           let no2= +document.getElementById(`num2`).value;
+        
+           let sum= no1/no2;
+           document.getElementById(`operation`).innerHTML="division";
+
+                document.getElementById(`answer`).innerHTML=` ${sum}`;
+           }
+
+    //   Mod function
+    
+        function mod(){
+           let no1= +document.getElementById(`num1`).value;
+           let no2= +document.getElementById(`num2`).value;
+        
+           let sum= no1%no2;
+           document.getElementById(`operation`).innerHTML="modulo div";
+
+                document.getElementById(`answer`).innerHTML=` ${sum}`;
+           }
+
+          
+          
+
+    </script>
+   
+    
+</body>
+</html>
